@@ -51,13 +51,12 @@
             <h2>FlappyGA</h2>
             <div class="portfolio-details-slider swiper">
               <div class="swiper-wrapper align-items-center">
-
+                
                 <div class="swiper-slide">
-                  <img src="assets/img/projects/FlappyGA/FlappyGA.jpg" alt="">
-                </div>
-
-                <div class="swiper-slide">
-                  <img src="" alt="">
+                  <video width="640" height="480" controls>
+                    <source src="assets/img/projects/FlappyGA/FlappyGA_Video.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
                 </div>
 
               </div>
@@ -68,9 +67,16 @@
           <div class="col-lg-4">
             <div class="portfolio-description">
               <h2>Project Information</h2>
-              <p>
-                Online Multiplayer Flappy Birds Game developed with controls on FPGA embedded accelerometer.
-              </p>
+              <p>FlappyGA, a game we created as part of our EIE2 Information Processing Project at Imperial College London based off of Flappy Bird.  </p>
+              <p>The game involves players tilting their FPGA up and down to move the character; it supports up to 8 players playing at once.  </p>
+              <h4 id="requirements">Requirements</h4>
+              <p>The functional requirements of the system included:</p>
+              <ul>
+              <li>FPGA performs fixed-point FIR filtering on data from accelerometer sensor to smoothen it and remove noise.</li>
+              <li>FPGA accelerometer data is processed on a local computer, which determines the board tilt direction. This is then sent via a websocket to Unity.</li>
+              <li>Photon Server is used to control the game state to allow for multiplayer. We use the DynamoDB SDK to update and get leaderboard data. </li>
+              <li>The FPGA is updated with the number of jumps to inform the user how long he or she has lasted in the game.</li>
+              </ul>
               <a href="https://github.com/johanjino/FlappyGA" class="github"><i class="bx bxl-github"></i></a>
             </div>
           </div>
